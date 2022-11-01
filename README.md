@@ -21,3 +21,6 @@ Ran with the following resources:
 
 Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz (20 CPUs), 3.7GHz,
 NVIDIA GeForce RTX 2080 SUPER (8GB) and 32GB of installed RAM
+
+To note:
+-if ran with lower specs, the chatbot might take long to provide an answer and it might misbehave, as well
