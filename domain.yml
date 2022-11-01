@@ -1,0 +1,373 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - saying_number
+  - saying_gender
+  - sugar
+
+entities:
+ - number
+ - gender
+ - spoons
+
+#slots:
+#  gender:
+#    type: categorical
+#    influence_conversation: true
+#    values:
+#      - male
+#      - female
+#      - sugar
+#      - skip
+#    mappings:
+#    - type: from_text
+#      conditions:
+#      - active_loop: gender_form
+#        requested_slot: gender
+#  spoons:
+#    type: float
+#    min_value: 0
+#    max_value: 100
+#    influence_conversation: false
+#    mappings:
+#    - type: from_text
+#      conditions:
+#      - active_loop: spoons_form
+#        requested_slot: spoons
+
+#forms:
+#  gender_form:
+#    required_slots:
+#    - gender
+#  spoons_form:
+#    required_slots:
+#    - spoons
+
+
+
+responses:
+####BOT QUESTIONS####
+  utter_greet:
+    - text: "Hello, there!"
+    - text: "Hi!"
+    - text: "Hi there!"
+  utter_presentation:
+    - text: "I’m glad to have you here today! I am PandiBot! I am here to tackle the topic of sugar consumption! I would want to let you know that I am not an expert, but I do hope we can work together. It is important to me that you are healthy!"
+    - text: "Good to see you here today! I am PandiBot and my mission is to discuss sugar consumption as I am promoting a healthier lifestyle! I want to inform you that I am not an expert, but I hope we can collaborate! For me it is important that you are healthy!"
+    - text: "It is my pleasure to have you here today! I am PandiBot! I am here to tackle the topic of sugar consumption! It is important to me that you are healthy! Although I would like to make it clear that I am not an expert, I do hope we can collaborate."
+  utter_privacy_concerns:
+    - text: "Everything you say in this chat will be kept secret, so no worries! "
+    - text: "Since I respect your privacy seriously, you feel free to share whatever you would like."
+    - text: "Since I take your privacy seriously, you can talk about anything you would like, without fear of that information leaving the room."
+  utter_getting_permission:
+    - text: "With your permission, I would like us to discuss your sugar habits. Please let me know if this is fine for you."
+    - text: "Can I have your permission to dive in and check your sugar consumption habits?"
+  utter_ask_permission2:
+    - text: "Hm... In order for our session to start, I do need your approval, otherwise we have to end up right now. May I have your permission to begin the session?"
+  utter_ask_gender:
+    - text: "Alright! I need to know one more thing, before we move further on. Are you comfortable with sharing with me your gender? Please answer with: “female”, “male”, “other” or “skip”."
+  utter_something_to_think_about:
+    - text: "Think about the 35g of added sugar that are in a 330ml can of Coke! It's all gone in one slurp—your daily allowance. I'd like to get your input on this."
+  utter_what_you_said:
+    - text: "What you said is important. I value what you say." #####
+  utter_how_many_spoons:
+    - text: "How many teaspoons of sugar do you think you are having per day? (please write a digit only)" ###
+  utter_i_think_youre_on_the_right_track:
+    - text: "I think you're on the right track."
+  utter_learning_to_be_better:
+    - text: "Learning to be better when it comes to sugar consumption needs effort. You've already taken the first step by being in this session."
+  utter_cut_down_spoons:
+    - text: "What do you think you could cut that down to? (tell me a digit)"
+  utter_keep_going:
+    - text: "Keep going!"
+  utter_forget_about_numbers:
+    - text: "Let's forget about your numbers for now and work on a small goal that you feel you can accomplish. What goal would you like to set that you are willing to accomplish regarding your sugar consumption (e.g. cutting back on sugary drinks)?"
+  utter_decision:
+    - text: "You've really made a decision, that's great. I think you can do it!"
+  utter_carry_plan_next_week:
+    - text: "On a scale of 1 (low) to 10 (high), how confident are you that you can carry out this plan for the next week? (please tell me a digit only)"
+  #################################
+  utter_good_thing_no_sugar:
+    - text: "I do have some ideas why people might decide not to consume so much sugar, but what really matters is what is important to you. Just to brainstorm a bit, what according to you, would be a good thing about not consuming sugar?"
+  utter_good_reason:
+    - text: "… That's a really good reason."
+  utter_what_is_good_about_sugar:
+    - text:  "What is a good thing about eating sugar?"
+  utter_interesting:
+    - text: "Interesting point."
+  utter_what_is_another_good_about_sugar:
+    - text: "What is another good thing about consuming sugar?"
+  utter_good:
+    - text: "Good."
+  utter_more_positive_sugar:
+    - text: "What is one more positive thing about consuming sugar? Tell me."
+  utter_ok:
+    - text: "OK."
+  utter_bad_sugar:
+    - text: "Now, what is a bad reason about consuming sugar?"
+  utter_good_suggestion:
+    - text: "That's a good suggestion."
+  utter_bad_about_sugar:
+    - text: "What is another bad thing about sugar consumption to you?"
+  utter_i_see:
+    - text: "I see."
+  utter_more_negative_things:
+    - text: "What is one more negative thing about consuming sugar? Let me know."
+  utter_those_are_great_ideas:
+    - text: "Those are some great points that you bring out, and i'm really glad you came up with these ideas."
+  utter_actually:
+    - text: "Actually, I think you're already moving forward by talking about this."
+  ###########summarization
+  utter_not_so_good_sugar: ##check
+    - text: "What do you see as some not-so-good things if you continue consuming sugar as you are?"
+  utter_started_eating_less:
+    - text: "Suppose you started eating less sugar or even quitting sugar for good tomorrow. What might be different in your life?"
+    - text: "What do you think you will lose if you give up sugar?"
+  utter_how_sugar_works:
+    - text: "Would you like me to explain how sugar works in the body?"
+  utter_thats_great:
+    - text: "That's great!"
+  utter_no_need_to_worry:
+    - text: "Hmm. No need to worry if you don't."
+  utter_explain_sugar:
+    - text: "Sugar is your cells' principal source of energy. During digestion, complex carbohydrates such as starch are broken down into simple sugars, which are subsequently used by the cells to provide energy. Normally, your blood has 5g of sugar dissolved in it (about a teaspoon). That's just around 20 calories, or roughly five minutes of walking."
+  utter_explain_more:
+    - text: "Then, as an interesting fact about how it works in the brain, dopamine and opioids, which are natural pleasure compounds, are released by sugar in the brain. Rats on a high-sugar diet act like drug addicts!"
+  utter_reasons_why_too_much_sugar_bad:
+    - text: "Would you like me to give you some reasons why too much sugar is bad for you?"
+  utter_interested:
+    - text: "It's good that you show interest!"
+  utter_and_thats_ok:
+    - text: "And that is totally ok."
+  utter_you_will_be_fine:
+    - text: "I think you will be fine as well."
+  utter_reasons_why_too_much_sugar_bad2:
+    - text: "First of all, it can cause weight gain! Then, it has been linked to acne. It also increases risk of a heart disease, type 2 diabetes, cancer, and depression. It may accelerate the skin aging process, it drains your energy and it can lead to a fatty liver. Lastly, it can negatively impact dental health."
+  utter_potential_signs_too_much_sugar:
+    - text: "Would you like me to indicate some potential signs that you might be eating too much sugar?"
+  utter_i_too_believe:
+    - text: "It's definitely good to know."
+  utter_potential_signs_too_much_sugar2:
+    - text: "Increased hunger and weight gain are some signs. It can be that foods don't taste sweet enough too. You might see signs of irritability, fatigue and low energy. You might observe acne and wrinkles, joint pain or high blood pressure. Sleep issues, brain fog and cavities are also signs that you might be eating too much sugar."
+ ##############################
+  utter_improve_sugar:
+    - text: "On a scale of 1 (low) to 10 (high), how important is it to you to improve your sugar consumption habits? (remember, digit only)"
+  utter_balanced_sugar_intake: #
+    - text: "On a scale of 1 to 10, where 1 means having a balanced sugar intake is not at all important to you and 10 means having a balanced sugar intake is very important to you, how important is having a balanced sugar intake to you? (I take digits only)"
+  #########################
+  utter_trips_tricks:
+    - text: "I can help with finding trips and tricks to improve your sugar habits. Let's dive deep, shall we?"
+  utter_trips_tricks2:
+    - text: "You could swap any sweet drink with water and instead of smoothies, go for the whole fruits. Try not to add too much sugar in your coffee, or give Stevia a try. Look for products that says zero added sugar, like for ketchup for example."
+  utter_trips_tricks3:
+    - text: "In the morning, try to swap your bowl of cereals with oats and fix a mixture that works for you. You can also replace fruity yogurts with plain yogurt and add fresh or frozen fruits to it. More, you can try and replace your candies with fruits, nuts or dark chocolate. And Nutella is definitely something to avoid. Natural nut butters are better."
+  utter_more:
+    - text: "Would you like to hear some more?"
+  utter_glad_to_hear:
+    - text: "Okay, I am glad to hear that you are trying to eat less sugar."
+  utter_amazing:
+    - text: "That's very good."
+  utter_lets_continue:
+    - text: "It's understandable. Let's continue."
+  #####################################
+  utter_most_likely_to_consume_sugar:
+    - text: "When would you be most likely to consume sugar?"
+  utter_give_me_example:
+    - text: "Give me an example."
+  utter_make_a_change_before:
+    - text: "What have you tried before to make a change?"
+  utter_certainly_ok:
+    - text: "And that's certainly okay! You're thinking about it, that's already a first step."
+  utter_thirsty:
+    - text: "What do you drink when you are thirsty nowadays?"
+#################################################
+  utter_how_improve_habits:
+    - text: "So if you decide to improve your sugar consumption habits, how would you do it?"
+    - text: "What would be a good first step in eating less sugar?"
+  utter_elaborate:
+    - text: "That’s a great idea. Can you elaborate on that?"
+    - text: "That’s helpful. I’d appreciate it if you could give me more detail."
+  utter_alr:
+    - text: "Alright."
+  utter_felt_like_something_sweet:
+    - text: "What might you do if you felt like eating something sweet?"
+    - text: "What is the first thing that comes into your mind when you have sweet cravings?"
+  utter_edibles:
+    - text: "What kind of edibles that contain sugar are you usually consuming?"
+  utter_i_hear_you:
+    - text: "Right. I hear you."
+  utter_right:
+    - text: "Right."
+  utter_helps:
+    - text: "What do you say to yourself that helps you when you feel like eating something that contains sugar, but you know you shouldn't?"
+  utter_have_been_there:
+    - text: "I have been through that phase!"
+  utter_very_resourceful:
+    - text: "You are clearly a very resourceful person."
+  utter_friends:
+    - text: "What would your friends say about your sugar consumption?"
+  utter_honesty:
+    - text: "I appreciate your honesty."
+  utter_really:
+    - text: "Really?"
+  utter_sweet_beverages:
+    - text: "What are some other sweet beverages that you like to drink?"
+  utter_what_do_you_think_sugar:
+    - text: "What else can you think of when it comes to sugar?"
+  utter_alright:
+    - text: "Alright, so what I'm hearing you say is that you would like to reduce some concerns. Having the desire to bring changes helps us grow!"
+  utter_strong_smart:
+    - text: "Strong, smart, persistent. Sounds like you have a lots of what it takes to handle changes. How about this? Give me and example of a time when you really wanted something and you went after it."
+  utter_handles_yourself:
+    - text: "You handled yourself really well in that situation. If I were in your shoes, I don't know if I could have managed nearly so well."
+  utter_foundation_key:
+    - text: "You know, they say action is the foundational key to success. So keep it up!"
+  utter_moving_further:
+    - text: "Moving further..."
+  utter_last_scale:
+    - text: "How important would it be for you on a scale from 0 to 10 to do something about your sugar consumption now, after our discussion? (friendly reminder: digits)"
+  utter_last_thing:
+    - text: "I am wondering what you're feeling at this point. What do you want to do next?"
+    - text: "I am wondering what you think your next step should be. What do you want to do next?"
+    - text: "At this point, after reviewing all of this, what's the next step for you?"
+  utter_pre_summary:
+    - text: "Oops, but the time's almost up. We've got to wrap up our conversation today."
+  utter_summary:
+    - text: "So, let me summarize what I understand so far. Regarding your sugar consumption..."
+    - text: "So, as a final step, let's summarize everything. Regarding your sugar consumption..."
+    - text: "Let me see if I understand so far. Regarding your sugar consumption..."
+  utter_summary2:
+    - text: "Did I miss anything? (yes or no) "
+  utter_summary3:
+    - text: "Can you clarify it for me?"
+  utter_summary4:
+    - text: "Thank you for letting me know."
+  utter_ending:
+    - text: "I've enjoyed talking with you today, and getting to know you a bit."
+  utter_ending2:
+    - text: "I think that's all the time we have for now. I appreciate you sharing your thoughts with me today. Have a great day!"
+    - text: "Good to know. Thank you for coming in today. Let's talk again soon!"
+  utter_goodbye:
+    - text: "Talk to you another time!"
+    - text: "Goodbye!"
+    - text: "Bye, bye!"
+    - text: "See you later!"
+    - text: "See you!"
+    - text: "Bye!"
+    - text: "See you around!"
+##PANDIBOT HAS LEFT THE CHAT########
+
+
+actions:
+  ### action server ###
+- action_balanced_sugar
+- action_collect_answers
+- action_collect_cons_answers
+- action_collect_pro_answers
+- action_collect_spoons
+- action_gender_answer
+- action_improve_sugar
+- action_last_scale
+- action_next_week
+- action_paraphrase
+- action_spoons_answer
+- action_sugar_confidence
+- action_sugar_spoons
+- action_summarize
+- action_summarize_cons
+- action_summarize_pro
+
+
+ ### bot responses ###
+- utter_actually
+- utter_alr
+- utter_alright
+- utter_amazing
+- utter_and_thats_ok
+- utter_ask_gender
+- utter_ask_permission2
+- utter_bad_about_sugar
+- utter_bad_sugar
+- utter_balanced_sugar_intake
+- utter_carry_plan_next_week
+- utter_certainly_ok
+- utter_cut_down_spoons
+- utter_decision
+- utter_edibles
+- utter_elaborate
+- utter_ending
+- utter_ending2
+- utter_explain_more
+- utter_explain_sugar
+- utter_felt_like_something_sweet
+- utter_forget_about_numbers
+- utter_foundation_key
+- utter_friends
+- utter_getting_permission
+- utter_give_me_example
+- utter_glad_to_hear
+- utter_good
+- utter_good_reason
+- utter_good_suggestion
+- utter_good_thing_no_sugar
+- utter_goodbye
+- utter_greet
+- utter_handles_yourself
+- utter_have_been_there
+- utter_helps
+- utter_honesty
+- utter_how_improve_habits
+- utter_how_many_spoons
+- utter_how_sugar_works
+- utter_i_hear_you
+- utter_i_see
+- utter_i_think_youre_on_the_right_track
+- utter_i_too_believe
+- utter_improve_sugar
+- utter_interested
+- utter_interesting
+- utter_last_scale
+- utter_last_thing
+- utter_learning_to_be_better
+- utter_make_a_change_before
+- utter_more
+- utter_more_negative_things
+- utter_more_positive_sugar
+- utter_most_likely_to_consume_sugar
+- utter_moving_further
+- utter_not_so_good_sugar
+- utter_ok
+- utter_potential_signs_too_much_sugar
+- utter_potential_signs_too_much_sugar2
+- utter_pre_summary
+- utter_presentation
+- utter_privacy_concerns
+- utter_reasons_why_too_much_sugar_bad
+- utter_reasons_why_too_much_sugar_bad2
+- utter_right
+- utter_something_to_think_about
+- utter_started_eating_less
+- utter_strong_smart
+- utter_summary
+- utter_summary2
+- utter_summary4
+- utter_sweet_beverages
+- utter_thats_great
+- utter_thirsty
+- utter_those_are_great_ideas
+- utter_trips_tricks
+- utter_trips_tricks2
+- utter_trips_tricks3
+- utter_very_resourceful
+- utter_what_do_you_think_sugar
+- utter_what_is_another_good_about_sugar
+- utter_what_is_good_about_sugar
+- utter_what_you_said
+
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: false
