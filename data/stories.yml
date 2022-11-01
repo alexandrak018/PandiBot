@@ -1,0 +1,1583 @@
+version: "3.1"
+
+stories:
+- story: introduction affirm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+
+
+- story: introduction deny
+  steps:
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: deny
+  - action: utter_ask_permission2
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+
+- story: after introduction
+  steps:
+  - action: utter_what_you_said
+  - action: utter_how_many_spoons
+  - intent: saying_number
+  - action: action_collect_spoons
+  - action: utter_cut_down_spoons
+  - intent: saying_number
+  - action: action_spoons_answer
+  - action: utter_learning_to_be_better
+  - action: utter_i_think_youre_on_the_right_track
+  - action: utter_forget_about_numbers
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_decision
+  - action: utter_carry_plan_next_week
+  - intent: saying_number
+  - action: action_next_week
+  - action: utter_good_thing_no_sugar #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_good_reason #
+  - action: utter_what_is_good_about_sugar # //
+  - intent: sugar #
+  - action: action_collect_pro_answers
+  - action: action_paraphrase
+  - action: utter_interesting #
+  - action: utter_what_is_another_good_about_sugar # //y
+  - intent: sugar #
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_good
+  - action: utter_more_positive_sugar # //
+  - intent: sugar #
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_ok #
+  - action: utter_bad_sugar # //
+  - intent: sugar #
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_good_suggestion #
+  - action: utter_bad_about_sugar #
+  - intent: sugar #
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_i_see #
+  - action: utter_more_negative_things
+  - intent: sugar #
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: action_summarize_pro
+  - action: action_summarize_cons
+  - action: utter_those_are_great_ideas #
+  - action: utter_actually #
+  - action: utter_not_so_good_sugar #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: action_paraphrase #
+  - action: utter_started_eating_less #
+  - intent: sugar
+  - action: action_collect_answers
+
+- story: permission affirm affirm affirm
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: affirm #
+  - action: utter_thats_great #
+  - action: utter_explain_sugar #
+  - action: utter_explain_more #
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: affirm #
+  - action: utter_interested #
+  - action: utter_reasons_why_too_much_sugar_bad2 #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: affirm #
+  - action: utter_i_too_believe #
+  - action: utter_potential_signs_too_much_sugar2 #
+  - action: utter_improve_sugar #
+
+
+- story: permission affirm affirm deny
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: affirm #
+  - action: utter_thats_great #
+  - action: utter_explain_sugar #
+  - action: utter_explain_more #
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: affirm #
+  - action: utter_interested #
+  - action: utter_reasons_why_too_much_sugar_bad2 #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: deny #
+  - action: utter_no_need_to_worry #
+  - action: utter_improve_sugar #
+
+
+- story: permission affirm deny affirm
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: affirm
+  - action: utter_thats_great #
+  - action: utter_explain_sugar #
+  - action: utter_explain_more #
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: deny
+  - action: utter_no_need_to_worry #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: affirm #
+  - action: utter_i_too_believe #
+  - action: utter_potential_signs_too_much_sugar2 #
+  - action: utter_improve_sugar #
+
+- story: permission deny affirm affirm
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: deny #
+  - action: utter_no_need_to_worry #
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: affirm #
+  - action: utter_interested #
+  - action: utter_reasons_why_too_much_sugar_bad2 #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: affirm #
+  - action: utter_i_too_believe #
+  - action: utter_potential_signs_too_much_sugar2 #
+  - action: utter_improve_sugar #
+
+- story: permission deny deny affirm
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: deny #
+  - action: utter_no_need_to_worry #
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: deny #
+  - action: utter_you_will_be_fine #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: affirm #
+  - action: utter_i_too_believe #
+  - action: utter_potential_signs_too_much_sugar2 #
+  - action: utter_improve_sugar #
+
+- story: permission deny affirm deny
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: deny #
+  - action: utter_no_need_to_worry #
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: affirm #
+  - action: utter_interested #
+  - action: utter_reasons_why_too_much_sugar_bad2 #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: deny #
+  - action: utter_you_will_be_fine #
+  - action: utter_improve_sugar #
+
+- story: permission affirm deny deny
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: affirm
+  - action: utter_thats_great #
+  - action: utter_explain_sugar #
+  - action: utter_explain_more #
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: deny #
+  - action: utter_no_need_to_worry #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: deny #
+  - action: utter_you_will_be_fine #
+  - action: utter_improve_sugar #
+
+
+- story: permission deny deny deny
+  steps:
+  - action: utter_started_eating_less #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_how_sugar_works #
+  - intent: deny
+  - action: utter_and_thats_ok
+  - action: utter_reasons_why_too_much_sugar_bad #
+  - intent: deny #
+  - action: utter_no_need_to_worry #
+  - action: utter_potential_signs_too_much_sugar #
+  - intent: deny #
+  - action: utter_you_will_be_fine #
+  - action: utter_improve_sugar #
+
+
+- story: permission2 affirm affirm
+  steps:
+   - action: utter_improve_sugar #
+   - intent: saying_number #
+   - action: action_improve_sugar
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: action_paraphrase #
+   - action: utter_balanced_sugar_intake #
+   - intent: saying_number #
+   - action: action_balanced_sugar #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: action_paraphrase #
+   - action: utter_trips_tricks #
+   - intent: affirm #
+   - intent: utter_glad_to_hear #
+   - action: utter_trips_tricks2 #
+   - action: utter_more #
+   - intent: affirm #
+   - action: utter_amazing #
+   - action: utter_trips_tricks3 #
+   - action: utter_most_likely_to_consume_sugar #
+
+- story: permission2 deny affirm  #stops here
+  steps:
+   - action: utter_improve_sugar #
+   - intent: saying_number #
+   - action: action_improve_sugar #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: action_paraphrase #
+   - action: utter_balanced_sugar_intake #
+   - intent: saying_number #
+   - action: action_balanced_sugar # paraphrase?
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: action_paraphrase #
+   - action: utter_trips_tricks #
+   - intent: deny #
+   - action: utter_lets_continue #
+   - action: utter_most_likely_to_consume_sugar #
+
+- story: permission2 affirm deny
+  steps:
+   - action: utter_improve_sugar #
+   - intent: saying_number #
+   - action: action_improve_sugar #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: action_paraphrase #
+   - action: utter_balanced_sugar_intake #
+   - intent: saying_number #
+   - action: action_balanced_sugar #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: action_paraphrase #
+   - action: utter_trips_tricks #
+   - intent: affirm #
+   - intent: utter_glad_to_hear #
+   - action: utter_trips_tricks2 #
+   - action: utter_more #
+   - intent: deny
+   - action: utter_lets_continue #
+   - action: utter_most_likely_to_consume_sugar #
+
+
+#- story: permission2 deny deny doest not make sense
+#  steps:
+#   - action: utter_improve_sugar
+#   - intent: saying_number
+#   - action: action_improve_sugar
+#   - intent: sugar
+#   - action: utter_balanced_sugar_intake
+#   - intent: saying_number
+#   - action: action_balanced_sugar
+#   - intent: sugar
+#   - action: utter_trips_tricks
+#   - intent: deny
+#   - action: utter_more
+#   - intent: deny
+#   - action: utter_most_likely_to_consume_sugar
+
+
+- story: continue
+  steps:
+   - action: utter_most_likely_to_consume_sugar #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: utter_give_me_example #
+   - intent: sugar #
+   - action: action_paraphrase #
+   - action: utter_make_a_change_before #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: utter_certainly_ok #
+   - action: utter_thirsty #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: action_paraphrase #y
+   - action: utter_how_improve_habits #
+   - intent: sugar #
+   - action: action_collect_answers
+   - action: utter_alright
+   - action: utter_elaborate #
+   - or:
+        - intent: affirm
+        - intent: deny
+        - intent: sugar
+   - action: utter_alr #y
+   - action: utter_felt_like_something_sweet #
+   - intent: sugar #
+   - action: action_paraphrase #
+   - action: action_collect_answers
+   - action: utter_right #
+   - action: utter_edibles #
+
+
+
+- story: shift
+  steps:
+  - action: utter_edibles #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_i_hear_you #
+  - action: utter_helps #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_have_been_there #
+  - action: utter_very_resourceful #
+  - action: utter_friends #
+  - intent: sugar #
+  - action: utter_honesty #
+  - action: utter_sweet_beverages #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: utter_what_do_you_think_sugar #y
+  - intent: sugar #
+  - action: action_paraphrase #
+  - action: action_collect_answers
+  - action: utter_strong_smart #
+  - intent: sugar #
+  - action: action_paraphrase #
+  - action: utter_handles_yourself #
+  - action: utter_foundation_key #
+  - action: utter_moving_further #
+  - action: utter_last_scale #
+  - intent: saying_number #
+  - action: action_last_scale #
+  - intent: sugar #
+  - action: action_collect_answers
+  - action: action_paraphrase #
+  - action: utter_last_thing #
+
+
+- story: ending deny
+  steps:
+    - action: utter_last_thing #
+    - intent: sugar #
+    - action: action_paraphrase #y
+    - action: utter_pre_summary #
+    - action: utter_summary #
+    - action: action_summarize
+    - action: utter_summary2 #
+    - intent: deny #
+    - action: utter_summary4 #
+    - action: utter_ending #
+    - action: utter_ending2 #
+    - action: utter_goodbye
+    - intent: goodbye
+
+- story: ending affirm
+  steps:
+    - action: utter_last_thing #
+    - intent: sugar #
+    - action: action_paraphrase #
+    - action: utter_pre_summary #
+    - action: utter_summary #
+    - action: action_summarize
+    - action: utter_summary2 #
+    - intent: affirm #
+    - action: utter_summary3 #
+    - or:
+         - intent: sugar #
+         - intent: affirm
+         - intent: deny
+    - action: action_paraphrase
+    - action: utter_summary4 #
+    - action: utter_ending #
+    - action: utter_ending2 #
+    - action: utter_goodbye
+    - intent: goodbye
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+    entities:
+    - gender: female
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+  - action: utter_how_many_spoons
+  - intent: saying_number
+    entities:
+    - number: '6'
+  - action: action_collect_spoons
+  - action: utter_cut_down_spoons
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_spoons_answer
+  - action: utter_learning_to_be_better
+  - action: utter_i_think_youre_on_the_right_track
+  - action: utter_forget_about_numbers
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_decision
+  - action: utter_carry_plan_next_week
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_next_week
+  - action: utter_good_thing_no_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_good_reason
+  - action: utter_what_is_good_about_sugar
+  - intent: sugar
+  - action: action_collect_pro_answers
+  - action: action_paraphrase
+  - action: utter_interesting
+  - action: utter_what_is_another_good_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_good
+  - action: utter_more_positive_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_ok
+  - action: utter_bad_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_good_suggestion
+  - action: utter_bad_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_i_see
+  - action: utter_more_negative_things
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: action_summarize_pro
+  - action: action_summarize_cons
+  - action: utter_those_are_great_ideas
+  - action: utter_actually
+  - action: utter_not_so_good_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_started_eating_less
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_how_sugar_works
+  - intent: affirm
+  - action: utter_thats_great
+  - action: utter_explain_sugar
+  - action: utter_explain_more
+  - action: utter_reasons_why_too_much_sugar_bad
+  - intent: affirm
+  - action: utter_interested
+  - action: utter_reasons_why_too_much_sugar_bad2
+  - action: utter_potential_signs_too_much_sugar
+  - intent: affirm
+  - action: utter_i_too_believe
+  - action: utter_potential_signs_too_much_sugar2
+  - action: utter_improve_sugar
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_improve_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_balanced_sugar_intake
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_balanced_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_trips_tricks
+  - intent: affirm
+  - action: utter_glad_to_hear
+  - action: utter_trips_tricks2
+  - action: utter_more
+  - intent: affirm
+  - action: utter_amazing
+  - action: utter_trips_tricks3
+  - action: utter_most_likely_to_consume_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_give_me_example
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_make_a_change_before
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_certainly_ok
+  - action: utter_thirsty
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_how_improve_habits
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_alright
+  - action: utter_elaborate
+  - intent: sugar
+  - action: utter_alr
+  - action: utter_felt_like_something_sweet
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_right
+  - action: utter_edibles
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_i_hear_you
+  - action: utter_helps
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_have_been_there
+  - action: utter_very_resourceful
+  - action: utter_friends
+  - intent: sugar
+  - action: utter_honesty
+  - action: utter_sweet_beverages
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_what_do_you_think_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_strong_smart
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_handles_yourself
+  - action: utter_foundation_key
+  - action: utter_moving_further
+  - action: utter_last_scale
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_last_scale
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_last_thing
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_pre_summary
+  - action: utter_summary
+  - action: action_summarize
+  - action: utter_summary2
+  - intent: deny
+  - action: utter_summary4
+  - action: utter_ending
+  - action: utter_ending2
+  - action: utter_goodbye
+  - intent: goodbye
+
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+    entities:
+    - gender: other
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+  - action: utter_how_many_spoons
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_collect_spoons
+  - action: utter_cut_down_spoons
+  - intent: saying_number
+    entities:
+    - number: '3'
+  - action: action_spoons_answer
+  - action: utter_learning_to_be_better
+  - action: utter_i_think_youre_on_the_right_track
+  - action: utter_forget_about_numbers
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_decision
+  - action: utter_carry_plan_next_week
+  - intent: saying_number
+    entities:
+    - number: '8'
+  - action: action_next_week
+  - action: utter_good_thing_no_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_good_reason
+  - action: utter_what_is_good_about_sugar
+  - intent: sugar
+  - action: action_collect_pro_answers
+  - action: action_paraphrase
+  - action: utter_interesting
+  - action: utter_what_is_another_good_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_good
+  - action: utter_more_positive_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_ok
+  - action: utter_bad_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_good_suggestion
+  - action: utter_bad_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_i_see
+  - action: utter_more_negative_things
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: action_summarize_pro
+  - action: action_summarize_cons
+  - action: utter_those_are_great_ideas
+  - action: utter_actually
+  - action: utter_not_so_good_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_started_eating_less
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_how_sugar_works
+  - intent: affirm
+  - action: utter_thats_great
+  - action: utter_explain_sugar
+  - action: utter_explain_more
+  - action: utter_reasons_why_too_much_sugar_bad
+  - intent: affirm
+  - action: utter_interested
+  - action: utter_reasons_why_too_much_sugar_bad2
+  - action: utter_potential_signs_too_much_sugar
+  - intent: deny
+  - action: utter_no_need_to_worry
+  - action: utter_improve_sugar
+  - intent: saying_number
+    entities:
+    - number: '6'
+  - action: action_improve_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_balanced_sugar_intake
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_balanced_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_trips_tricks
+  - intent: affirm
+  - action: utter_glad_to_hear
+  - action: utter_trips_tricks2
+  - action: utter_more
+  - intent: affirm
+  - action: utter_amazing
+  - action: utter_trips_tricks3
+  - action: utter_most_likely_to_consume_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_give_me_example
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_make_a_change_before
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_certainly_ok
+  - action: utter_thirsty
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_how_improve_habits
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_alright
+  - action: utter_elaborate
+  - intent: sugar
+  - action: utter_alr
+  - action: utter_felt_like_something_sweet
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_right
+  - action: utter_edibles
+  - intent: sugar
+    entities:
+    - first_name: Poiana
+  - action: action_collect_answers
+  - action: utter_i_hear_you
+  - action: utter_helps
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_have_been_there
+  - action: utter_very_resourceful
+  - action: utter_friends
+  - intent: sugar
+  - action: utter_honesty
+  - action: utter_sweet_beverages
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_what_do_you_think_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_strong_smart
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_handles_yourself
+  - action: utter_foundation_key
+  - action: utter_moving_further
+  - action: utter_last_scale
+  - intent: saying_number
+    entities:
+    - number: '7'
+  - action: action_last_scale
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_last_thing
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_pre_summary
+  - action: utter_summary
+  - action: action_summarize
+  - action: utter_summary2
+  - intent: affirm
+  - action: utter_summary3
+  - intent: sugar
+  - action: utter_summary4
+  - action: utter_ending
+  - action: utter_ending2
+  - action: utter_goodbye
+  - intent: goodbye
+
+
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+    entities:
+    - gender: male
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+  - action: utter_how_many_spoons
+  - intent: saying_number
+    entities:
+    - number: '8'
+  - action: action_collect_spoons
+  - action: utter_cut_down_spoons
+  - intent: saying_number
+    entities:
+    - number: '8'
+  - action: action_spoons_answer
+  - action: utter_learning_to_be_better
+  - action: utter_i_think_youre_on_the_right_track
+  - action: utter_forget_about_numbers
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_decision
+  - action: utter_carry_plan_next_week
+  - intent: saying_number
+    entities:
+    - number: '10'
+  - action: action_next_week
+  - action: utter_good_thing_no_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_good_reason
+  - action: utter_what_is_good_about_sugar
+  - intent: sugar
+  - action: action_collect_pro_answers
+  - action: action_paraphrase
+  - action: utter_interesting
+  - action: utter_what_is_another_good_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_good
+  - action: utter_more_positive_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_ok
+  - action: utter_bad_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_good_suggestion
+  - action: utter_bad_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_i_see
+  - action: utter_more_negative_things
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: action_summarize_pro
+  - action: action_summarize_cons
+  - action: utter_those_are_great_ideas
+  - action: utter_actually
+  - action: utter_not_so_good_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_started_eating_less
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_how_sugar_works
+  - intent: deny
+  - action: utter_no_need_to_worry
+  - action: utter_reasons_why_too_much_sugar_bad
+  - intent: deny
+  - action: utter_you_will_be_fine
+  - action: utter_potential_signs_too_much_sugar
+  - intent: affirm
+  - action: utter_i_too_believe
+  - action: utter_potential_signs_too_much_sugar2
+  - action: utter_improve_sugar
+  - intent: saying_number
+    entities:
+    - number: '3'
+  - action: action_improve_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_balanced_sugar_intake
+  - intent: saying_number
+    entities:
+    - number: '6'
+  - action: action_balanced_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_trips_tricks
+  - intent: deny
+  - action: utter_lets_continue
+  - action: utter_most_likely_to_consume_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_give_me_example
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_make_a_change_before
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_certainly_ok
+  - action: utter_thirsty
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_how_improve_habits
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_alright
+  - action: utter_elaborate
+  - intent: deny
+  - action: utter_alr
+  - action: utter_felt_like_something_sweet
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_right
+  - action: utter_edibles
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_i_hear_you
+  - action: utter_helps
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_have_been_there
+  - action: utter_very_resourceful
+  - action: utter_friends
+  - intent: sugar
+  - action: utter_honesty
+  - action: utter_sweet_beverages
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_what_do_you_think_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_strong_smart
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_handles_yourself
+  - action: utter_foundation_key
+  - action: utter_moving_further
+  - action: utter_last_scale
+  - intent: saying_number
+    entities:
+    - number: '10'
+  - action: action_last_scale
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_last_thing
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_pre_summary
+  - action: utter_summary
+  - action: action_summarize
+  - action: utter_summary2
+  - intent: deny
+  - action: utter_summary4
+  - action: utter_ending
+  - action: utter_ending2
+  - action: utter_goodbye
+  - intent: goodbye
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+  - action: utter_how_many_spoons
+  - intent: saying_number
+    entities:
+    - number: '8'
+  - action: action_collect_spoons
+  - action: utter_cut_down_spoons
+  - intent: saying_number
+    entities:
+    - number: '6'
+  - action: action_spoons_answer
+  - action: utter_learning_to_be_better
+  - action: utter_i_think_youre_on_the_right_track
+  - action: utter_forget_about_numbers
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_decision
+  - action: utter_carry_plan_next_week
+  - intent: saying_number
+    entities:
+    - number: '8'
+  - action: action_next_week
+  - action: utter_good_thing_no_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_good_reason
+  - action: utter_what_is_good_about_sugar
+  - intent: sugar
+  - action: action_collect_pro_answers
+  - action: action_paraphrase
+  - action: utter_interesting
+  - action: utter_what_is_another_good_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_good
+  - action: utter_more_positive_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_ok
+  - action: utter_bad_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_good_suggestion
+  - action: utter_bad_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_i_see
+  - action: utter_more_negative_things
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: action_summarize_pro
+  - action: action_summarize_cons
+  - action: utter_those_are_great_ideas
+  - action: utter_actually
+  - action: utter_not_so_good_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_started_eating_less
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_how_sugar_works
+  - intent: deny
+  - action: utter_and_thats_ok
+  - action: utter_reasons_why_too_much_sugar_bad
+  - intent: deny
+  - action: utter_no_need_to_worry
+  - action: utter_potential_signs_too_much_sugar
+  - intent: deny
+  - action: utter_you_will_be_fine
+  - action: utter_improve_sugar
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_improve_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_balanced_sugar_intake
+  - intent: saying_number
+    entities:
+    - number: '3'
+  - action: action_balanced_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_trips_tricks
+  - intent: deny
+  - action: utter_lets_continue
+  - action: utter_most_likely_to_consume_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_give_me_example
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_make_a_change_before
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_certainly_ok
+  - action: utter_thirsty
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_how_improve_habits
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_alright
+  - action: utter_elaborate
+  - intent: sugar
+  - action: utter_alr
+  - action: utter_felt_like_something_sweet
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_right
+  - action: utter_edibles
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_i_hear_you
+  - action: utter_helps
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_have_been_there
+  - action: utter_very_resourceful
+  - action: utter_friends
+  - intent: sugar
+  - action: utter_honesty
+  - action: utter_sweet_beverages
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_what_do_you_think_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_strong_smart
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_handles_yourself
+  - action: utter_foundation_key
+  - action: utter_moving_further
+  - action: utter_last_scale
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_last_scale
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_last_thing
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_pre_summary
+  - action: utter_summary
+  - action: action_summarize
+  - action: utter_summary2
+  - intent: deny
+  - action: utter_summary4
+  - action: utter_ending
+  - action: utter_ending2
+  - action: utter_goodbye
+  - intent: goodbye
+
+
+- story: interactive_story_5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: deny
+  - action: utter_ask_permission2
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+    entities:
+    - gender: skip
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+  - action: utter_how_many_spoons
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_collect_spoons
+  - action: utter_cut_down_spoons
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_spoons_answer
+  - action: utter_learning_to_be_better
+  - action: utter_i_think_youre_on_the_right_track
+  - action: utter_forget_about_numbers
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_decision
+  - action: utter_carry_plan_next_week
+  - intent: saying_number
+    entities:
+    - number: '2'
+  - action: action_next_week
+  - action: utter_good_thing_no_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_good_reason
+  - action: utter_what_is_good_about_sugar
+  - intent: sugar
+  - action: action_collect_pro_answers
+  - action: action_paraphrase
+  - action: utter_interesting
+  - action: utter_what_is_another_good_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_good
+  - action: utter_more_positive_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_ok
+  - action: utter_bad_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_good_suggestion
+  - action: utter_bad_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_i_see
+  - action: utter_more_negative_things
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: action_summarize_pro
+  - action: action_summarize_cons
+  - action: utter_those_are_great_ideas
+  - action: utter_actually
+  - action: utter_not_so_good_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_started_eating_less
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_how_sugar_works
+  - intent: affirm
+  - action: utter_thats_great
+  - action: utter_explain_sugar
+  - action: utter_explain_more
+  - action: utter_reasons_why_too_much_sugar_bad
+  - intent: deny
+  - action: utter_no_need_to_worry
+  - action: utter_potential_signs_too_much_sugar
+  - intent: affirm
+  - action: utter_i_too_believe
+  - action: utter_potential_signs_too_much_sugar2
+  - action: utter_improve_sugar
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_improve_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_balanced_sugar_intake
+  - intent: saying_number
+    entities:
+    - number: '1'
+  - action: action_balanced_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_trips_tricks
+  - intent: affirm
+  - action: utter_glad_to_hear
+  - action: utter_trips_tricks2
+  - action: utter_more
+  - intent: deny
+  - action: utter_lets_continue
+  - action: utter_most_likely_to_consume_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_give_me_example
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_make_a_change_before
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_certainly_ok
+  - action: utter_thirsty
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_how_improve_habits
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_alright
+  - action: utter_elaborate
+  - intent: sugar
+  - action: utter_alr
+  - action: utter_felt_like_something_sweet
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_right
+  - action: utter_edibles
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_i_hear_you
+  - action: utter_helps
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_have_been_there
+  - action: utter_very_resourceful
+  - action: utter_friends
+  - intent: sugar
+  - action: utter_honesty
+  - action: utter_sweet_beverages
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_what_do_you_think_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_strong_smart
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_handles_yourself
+  - action: utter_foundation_key
+  - action: utter_moving_further
+  - action: utter_last_scale
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_last_scale
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_last_thing
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_pre_summary
+  - action: utter_summary
+  - action: action_summarize
+  - action: utter_summary2
+  - intent: deny
+  - action: utter_summary4
+  - action: utter_ending
+  - action: utter_ending2
+  - action: utter_goodbye
+  - intent: goodbye
+
+- story: interactive_story_7
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_presentation
+  - action: utter_privacy_concerns
+  - action: utter_getting_permission
+  - intent: affirm
+  - action: utter_ask_gender
+  - intent: saying_gender
+  - action: action_gender_answer
+  - action: utter_something_to_think_about
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_what_you_said
+  - action: utter_how_many_spoons
+  - intent: saying_number
+    entities:
+    - number: '5'
+  - action: action_collect_spoons
+  - action: utter_cut_down_spoons
+  - intent: saying_number
+    entities:
+    - number: '12'
+  - action: action_spoons_answer
+  - action: utter_learning_to_be_better
+  - action: utter_i_think_youre_on_the_right_track
+  - action: utter_forget_about_numbers
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_decision
+  - action: utter_carry_plan_next_week
+  - intent: saying_number
+    entities:
+    - number: '6'
+  - action: action_next_week
+  - action: utter_good_thing_no_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_good_reason
+  - action: utter_what_is_good_about_sugar
+  - intent: sugar
+  - action: action_collect_pro_answers
+  - action: action_paraphrase
+  - action: utter_interesting
+  - action: utter_what_is_another_good_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_good
+  - action: utter_more_positive_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_pro_answers
+  - action: utter_ok
+  - action: utter_bad_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_good_suggestion
+  - action: utter_bad_about_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: utter_i_see
+  - action: utter_more_negative_things
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_cons_answers
+  - action: action_summarize_pro
+  - action: action_summarize_cons
+  - action: utter_those_are_great_ideas
+  - action: utter_actually
+  - action: utter_not_so_good_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_started_eating_less
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_how_sugar_works
+  - intent: affirm
+  - action: utter_thats_great
+  - action: utter_explain_sugar
+  - action: utter_explain_more
+  - action: utter_reasons_why_too_much_sugar_bad
+  - intent: affirm
+  - action: utter_interested
+  - action: utter_reasons_why_too_much_sugar_bad2
+  - action: utter_potential_signs_too_much_sugar
+  - intent: affirm
+  - action: utter_i_too_believe
+  - action: utter_potential_signs_too_much_sugar2
+  - action: utter_improve_sugar
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_improve_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_balanced_sugar_intake
+  - intent: saying_number
+    entities:
+    - number: '7'
+  - action: action_balanced_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_trips_tricks
+  - intent: affirm
+  - action: utter_glad_to_hear
+  - action: utter_trips_tricks2
+  - action: utter_more
+  - intent: affirm
+  - action: utter_amazing
+  - action: utter_trips_tricks3
+  - action: utter_most_likely_to_consume_sugar
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_give_me_example
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_make_a_change_before
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_certainly_ok
+  - action: utter_thirsty
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_how_improve_habits
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_alright
+  - action: utter_elaborate
+  - intent: sugar
+  - action: utter_alr
+  - action: utter_felt_like_something_sweet
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_right
+  - action: utter_edibles
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_i_hear_you
+  - action: utter_helps
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_have_been_there
+  - action: utter_very_resourceful
+  - action: utter_friends
+  - intent: sugar
+  - action: utter_honesty
+  - action: utter_sweet_beverages
+  - intent: sugar
+  - action: action_collect_answers
+  - action: utter_what_do_you_think_sugar
+  - intent: sugar
+  - action: action_paraphrase
+  - action: action_collect_answers
+  - action: utter_strong_smart
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_handles_yourself
+  - action: utter_foundation_key
+  - action: utter_moving_further
+  - action: utter_last_scale
+  - intent: saying_number
+    entities:
+    - number: '4'
+  - action: action_last_scale
+  - intent: sugar
+  - action: action_collect_answers
+  - action: action_paraphrase
+  - action: utter_last_thing
+  - intent: sugar
+  - action: action_paraphrase
+  - action: utter_pre_summary
+  - action: utter_summary
+  - action: action_summarize
+  - action: utter_summary2
+  - intent: deny
+  - action: utter_summary4
+  - action: utter_ending
+  - action: utter_ending2
+  - action: utter_goodbye
+  - intent: goodbye

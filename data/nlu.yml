@@ -1,0 +1,896 @@
+version: "3.1"
+
+nlu:
+
+- intent: saying_number
+  examples: |
+    - [10](number)
+    - [9](number)
+    - [8](number)
+    - [5](number)    
+    - [4](number)
+    - [3](number)
+    - [2](number)
+    - [1](number)
+
+
+- intent: saying_gender
+  examples: |
+    - I identify as [male](gender)
+    - I am just a [other](gender)
+    - i am [female](gender)
+    - other[]{"entity": "gender", "value": "other"}
+    - male
+    - female
+    - Female
+    - other
+    - skip
+    - [female](gender)
+    - [skip](gender)
+    - [male](gender)
+    - [other](gender)
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - heelloooo
+    - hiiii
+    - hi there
+    - HI
+    - hellooooo thereee
+    - hello!
+    - hello there!   
+    - buh bye
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - bye!
+
+
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - yes, its okay for me
+    - yes, i would love to
+    - yes, i would like to
+    - sure, you have my permission
+    - indeed
+    - that sounds good
+    - correct
+    - yes, please
+    - that is true
+    - yeah
+    - go ahead
+    - certainly
+    - This is fine with me
+    - roger
+    - yeah, sure
+    - aha
+    - let's do this
+    - it is fine
+    - i do
+    - fine
+    - let's try
+    - yes, i do
+    - i agree
+    - ok
+    - y
+    - i want to know
+    - i would like
+    - indicate
+    - lets continue
+    - i would love to
+    - for sure
+    - yep
+    - yup
+    - yeah
+    - absolutely
+    - lets get going
+    - ok shoot
+    - yes i guess
+    - sure
+    - let's go
+    - alright
+    - sure, tell me that
+    - sure, tell me about that
+    - i am curios, so say
+    - ok, let's see
+    - ok, yes
+    - of course
+    - sure, tell me
+    - you have my permission
+    - sure, you have my permission
+    - ok, tell me
+    - sounds interesting
+    - let's dive
+    - let's dive deep then
+    - ok explain
+    - sure. lets do
+    - ok tell me
+    - im interested to know
+    - i want
+    - sure, lets do this
+    - why not
+    - tell me
+    - definitely
+    - fine
+    - roger
+    - shoot
+    - aye
+    - naturally 
+    - you bet
+    - yes, please 
+    - You got it.
+    - cool
+    - definitely
+    - id love to
+    - i would love to
+    - be my guest
+    - why not
+    - i guess so
+    - give it a go
+    - proceed
+    - everything looks good
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nah
+    - nein
+    - non
+    - not so much
+    - i do not
+    - i don't
+    - it is not fine
+    - i do not agree
+    - no, i dont really want to know
+    - i am not interested
+    - not really interested
+    - nope
+    - it is not fine
+    - i dont want to
+    - im not interested
+    - not
+    - no, everything is good
+    - i dont want to   
+    - im not fine with it
+    - im good
+    - im not interested
+    - no you didnt
+    - nah
+    - nope
+    - not yet
+    - not right now
+    - no way
+    - absolutely not
+    - im afraid not
+    - maybe another time
+    - I think I’ll pass
+    - It’s not really my thing. 
+    - no
+    - Unfortunately that’s not possible.
+    - I’d rather not.
+    - i dont want
+  
+
+- intent: sugar
+  examples: |
+    - it is bad for my teeth
+    - it's gotten expensive
+    - it is not healthy to eat too much sugar
+    - it can cause weight gain
+    - i could get acne on my face if i eat too much sugar
+    - i would get fat
+    - i could have heart problems
+    - i certainly do not want cavities
+    - i am not a big fan of sugar, anyways
+    - it does not help with my teeth too much, because it brings cavities
+    - it is affecting my brain too
+    - it gives me tooth pain and carries
+    - if you eat too much sugar, it makes you very tired in the end
+    - i will not fit into my clothes later on anymore
+    - i will become very fat sadly
+    - it can make you gain weight
+    - i would be healthier, maybe my skin would glow and my teeth would not hurt, and my mom would be happier
+    - less visits to the dentists
+    - doctors are anyways expensive
+    - in the morning
+    - in the evening
+    - ill probably gain weight and maybe ill suffer when im older
+    - pfff, maybe it gives me pimples at some point
+    - your clothes might not fit anymore
+    - its bad for the teeth
+    - too much sugar for something is not even healthy
+    - i could maybe drink twoo coffees instead of two, because i add a lot of sugar in my coffee
+    - probably i would be healthier then
+    - it gives me energy
+    - it is used for making sweets such as chocolate and sold in shops
+    - it is good for the brain
+    - it makes you gain weight
+    - nothing 
+    - nothing else
+    - i have no idea
+    - i would like to staying at a healthy weight
+    - i dont know
+    - i drink a can of soda every other day
+    - not much
+    - i eat at breakfast sweets
+    - so I don't have to face the health problems
+    - risks associated with high sugar consumption
+    - gives sleeping problems
+    - There's the risk of health complications related to sugar
+    - it sadly brings high blood pressure
+    - theres nothing
+    - i should reduce sweets
+    - i am so irritated
+    - i am so angry
+    - i am annoyed
+    - chhocolate bars
+    - nutella
+    - milka
+    - lindt 
+    - caramels
+    - lollipops
+    - i often chew gums
+    - cappucino
+    - gummies
+    - cookies
+    - brownies
+    - ice cream
+    - banan
+    - fruits
+    - pancake
+    - peanut butter
+    - cupcake
+    - chocolate roll
+    - cotton candy
+    - croissants
+    - marmalade
+    - donut
+    - apple
+    - strawberry
+    - redberry
+    - watermelon
+    - pepsi
+    - lipton
+    - ice tea
+    - nestea
+    - schweppes
+    - dr. pepper
+    - orange juice
+    - mixture of fruits
+    - mixed 
+    - fruity tea
+    - black tea
+    - milk
+    - liquor
+    - sparkly water or still water
+    - jam
+    - grapes
+    - peaches
+    - coconut
+    - ananas
+    - apricot
+    - cherry
+    - blueberry
+    - pears
+    - lemon
+    - grapefruit
+    - passionfruit
+    - papaya
+    - cranberry
+    - blueberyy
+    - mango
+    - yogurt
+    - smoothie
+    - salad
+    - evening
+    - midnight
+    - morning
+    - rarely
+    - often
+    - lunch
+    - dinner
+    - i often remind my own self how bas sugar is for me
+    - i should quit sugar
+    - i want to become healthier
+    - improved sleep cycles
+    - weight control
+    - healthier lifestyle
+    - i shouldnt eat this, i am so unhealthy
+    - i should deep study why sugar is bad
+    - everyone should be aware why sugar is not good
+    - i dream to improve myself
+    - i wish i was healthy
+    - i wish i would not eat so many candies
+    - added sugar
+    - products with sugar 
+    - breakfast
+    - at a time
+    - during the break
+    - while watching a movie
+    - on the table
+    - next to my plate
+    - i do not really show any motivation
+    - i never thought of it actually
+    - cinnamon roll
+    - vanilla
+    - triple chocolate
+    - espresso
+    - i have never tried much before
+    - i dont think i will to change anything
+    - sprinkled with chocolate
+    - black beer
+    - all kinds of sodas
+    - Sprite, Fanta, Coca-Cola, Coke, Orangina, cola vanilla, water with taste, sparkly water
+    - wine
+    - moonshine
+    - i want to consume less sugar
+    - i dont remember
+    - i cant tell why
+    - i can not understand why
+    - i already feel obese 
+    - i tried to replace candies with fruits and chocolate with nothing
+    - i always have this urge that i need sweets
+    - i need it right now
+    - i want to eat sugar right now
+    - i would love a chocolate roll
+    - i love a cold soda
+    - i was able to consume less chocolate for a while
+    - for a whole week, i didnt touch coffe
+    - i add sugar in my coffee
+    - i really made it, i stopped buying ice cream
+    - i really wish i can change
+    - health is important
+    - in the evening, during the night and early in the morning
+    - i want to start eating more fruits
+    - i love water
+    - i only drink tap water
+    - i love ice cream
+    - i should definitely not eat this beucase it does not benefit me
+    - i should not eat this because it is not healthy for me
+    - i am not eating sugar
+    - i am not eating sweets
+    - im not consuming sugary drinks
+    - i avoid sugar in general
+    - i was never aware of how much sugar i consume
+    - i never knew sodas have this much sugar in them
+    - wow, this is so much
+    - health should only improve
+    - my brain and my soul needs sugar to go through the day
+    - i really cant think of anything right now
+    - i sincerely have no idea
+    - i cant think of anything at the moment
+    - i would rather not think about it, sorry
+    - my teeeth are suffering
+    - i head sugar causes depression
+    - ie head sugar fuels depression
+    - sugar has a bad impact on your brain
+    - sugar messed with your thoughts
+    - suggar can make you unhappy as well
+    - my health will not improve
+    - my teeth are deteriorating slowly
+    - i have bad skin
+    - i have so many wrinkles
+    - i already have acne 
+    - wow, i should probably not drink coke
+    - i should not put honey or sugar in my tea
+    - i quit sugar sometimes, but i come back to it
+    - i should be more aware and careful with the sweets
+    - i have sugar cravings too often
+    - i need to do something about my sugar intake
+    - i have tummy problems, like feeling bloated
+    - That it is good that I don't really drink coca cola
+    - I could stop buyin gummy bears as a first step
+    - It could benefit the general health.
+    - A good thing about sugar is that it helps you happy when you are not.
+    - Another good thing is that we can use it to make pancakes!
+    - Another positive thing is that it can give a shock yo you're brain and then you are awake again
+    - It is bad to eat too much sugar because it can give you teeth carries.
+    - From what I've heard, too much sugar can cause even cancer
+    - I think it can cause damages to you hair growth so that is definitely a bad reason to eat sugar
+    - If i don't manage my sugar consumption, i will never lose weight
+    - I would probably quit dirnking coffee, because i can't drink coffee without sugar
+    - I will probably never lose weight I I don't stop eating so much chocolate
+    - It is important for me to do something about my sugar eating habits because I am too heavy.
+    - I would most likely eat sugar when I am bored
+    - Well, for example, I have sugar cravings whenever I play games on my computer or watch some Netflix
+    - I have tried not to shop during main grocery shopping, but then I just go sometimes to the shop next to me and grab sweets
+    - I would lose weight!
+    - Tea and water
+    - am chubby and round
+    - i carry a bottle of water around, so i dont buy sodas
+    - i replaced my coffee with black tea
+    - I like that sugar makes me happy
+    - I would try maybe to remind myself why sugar is contributin to my weight gain
+    - I would go to the fridge and grab something like chocolate
+    - I like cakes and chocolate mousse a lot for when craving sweets
+    - I tell myself that I should not, but I usually still end up eating sweets.
+    - I don't believe they care much, although my best friend mentions it sometimes
+    - The first thing I think of are my granny's cakes and sweets she bakes
+    - I enjoy fanta and alcohol drinks with fruits
+    - I think of all the colorful drinks on the shelves that are considered sodas and certainly, unhealthy!
+    - It could be just stopping to shop for them sweets
+    - Well, if we do not have sweets in the house, it could be stopping us from reaching to them
+    - I once had the courage to finally do parallel parking after a very long time in which I didn't.
+    - Because it is important to me to fit in my old pants again
+    - I will probably go drink some water, because this dialogue was long
+    - it messes your face up
+    - it can keep you awake
+    - i will become unhealthy
+    - my teeth wont hurt as much
+    - probably not much of affecting my life
+    - because i will also be old sometime in my life
+    - when i am usually stressed
+    - when i do something for university i get stressed
+    - i didnt really try to do anything
+    - weight!
+    - cold water
+    - that it tastes good
+    - i would stop shopping for sweets when going groceries shopping
+    - well if there are sweets in the kitchen i will for sure go grab some when jungry
+    - i would probably eat some chocolate or ice cream
+    - coffee, because i add sugar in it and mila chocolate
+    - that i should not eat anything sweet, because its late at night and im already too fat
+    - i dont think they care too much
+    - that its okay to eat sometimes sweet, but if i have already exaggerated i should stop there
+    - vanilla coca cola
+    - i think of my granny because she bakes a lot
+    - not buying sweets or not drinking sodas
+    - well because if we dont have sweets in the house, then we dont eat sugar. then we should replace sodas with water
+    - i failed my driving test twice, but i went for it and the third time i passed!
+    - i understand that sugar is bad, but im not sure if i will do something about it
+    - i wont do probably much
+    - it makes me happy and brings sweetness to my drink
+    - it gives yo ua shock of energy
+    - good for the health
+    - i want to go learn
+    - i could maybe drink less coffee because i add sugar in my coffee
+    - its fine, i dont really drink coke
+    - knowing why it aint good for the health maybe
+    - my granny
+    - it causes my teeth and tummy pain
+    - it makes me not sleep because i have too much energy
+    - i will be  n ot so healthy and i might get acne
+    - well, not too much, i don't eat that much sugar that it affects my life
+    - it lowers your blood sugar
+    - it is brain food
+    - because ill get old at some point in my life and i dont want too many wrinkles on my face
+    - simply because i care how i look
+    - being beautiful matters to me
+    - having a clean, glowing skin is important
+    - i head that for women is good to eat a bit of dark chocolate, but not too much, of course
+    - sugar is good for when you feel down
+    - it makes me happy
+    - i love eating sweets
+    - i love chocolate, so yeah, it has sugar
+    - i add sugar in my coffee, so it is important for me
+    - it makes everything sweet
+    - i would lose weight
+    - i think it is good for your health
+    - my teeth would appreciate it
+    - saves money
+    - my teeth would stop hurting
+    - i would definitely sleep better
+    - it gives you too much energy for the moment, and then it just vanishes
+    - i will lose weight definitely
+    - i will definitely lose some weight this way
+    - it makes my coffee sweet
+    - it brings me happiness
+    - i will not get so much acne and i will not gain so much weight
+    - it gives me a boost of energy
+    - it makes me happy
+    - it might not have to buy so much sugar, so i save money
+    - i save money like this
+    - it makes my coffee sweet
+    - you can bake cakes and sweets
+    - maybe not so much, maybe i sleep better
+    - to have a healthier lifestyle
+    - i would not feel so tired 
+    - i think i should stop drinking coke then
+    - that does not sound too good
+    - i will still drink coke as i enjoy it
+    - i do not really care to be honest
+    - that is fine
+    - i think that is not too much. i drink that in a day
+    - i drink more than that
+    - not too healthy
+    - a glass of water
+    - nutella
+    - at midnight
+    - at lunch
+    - I never knew coke has so much sugar in it
+    - i could cut on sugary drinks
+    - it is good for your teeth pain
+    - It gives you a good moof
+    - i dont know\
+    - sugar boosts your energy
+    - it makes your weight grow
+    - it destroys your blood
+    - it makes you lose hair
+    - i will probably never get better
+    - nothing
+    - i would like to not think about it
+    - to not die early
+    - when i go for walks
+    - i would stop by shops while returning home and buy something
+    - i didnt
+    - water
+    - having the will
+    - if you dont feel like doing something, then its useless
+    - i think that i am too overweight
+    - i take what i have at home or in the fridge
+    - that im not getting healthy this way
+    - that im fat
+    - i dont drink any sweet beverages. just water
+    - i cant think of much
+    - i didnt do anything memorable
+    - im chubby and not much will change
+    - i feel fat shamed so i will go cry in a corner
+    - tomorrow
+    - today
+    - yesterday
+    - sugar is tasty
+    - become irritated
+    - i really want to make a change
+    - that is too much sugar
+    - that is certainly too much
+    - i drink that in a minute
+    - i should probably stop drinking so much coke
+    - that's just too much sugar
+    - that's too much sugar for a can of soda
+    - we should definitely switch a soda can to water, that is just too much sugar
+    - i want to add less sugar in my coffee
+    - i will not eat chocolate so often
+    - i will stop adding sugar in my tea
+    - replace snacks with something less sweet
+    - swap out soda for water
+    - eat fruits whenever i feel like something sweet
+    - i will add less sugar in my morning coffee
+    - i could start eating less chocolate
+    - i picked an one because it is not so important to me how sugar affects me
+    - i do not really care, because i anyways don't consume that much sugar
+    - i am not  a big fan of sweets anyways, so i does not really matter
+    - i definitely eat too much sugar, but i do not really mind it
+    - i am fat and happy, what can i say
+    - i can definitely change my chocolate yogurt to plain yogurt    
+    - i eat sugar in the morning, because i add it to my coffee
+    - when i am on my period
+    - when i feel sad, i usually eat chocolate
+    - my therapist told me that as a woman, dark chocolate helps when you feel down
+    - when i go to birthdays, as they serve cake
+    - only for holidays
+    - i eat sweets everyday
+    - i guess when i have some cravings   
+    - i cut down sugar. i was adding sugar everywhere... my tea, my hot milk, my coffee
+    - i stopped buying sweets because i was always thinking about them
+    - i replaced sweet stuff with her zero or sugar-free options
+    - not so much because eating less sugar is not really my first priority
+    - not much, because i do not really care
+    - not much
+    - not really anything
+    - haha, probably weight
+    - very cold water
+    - i drink anything that's in the fridge as long as it is cold
+    - i love an ice coffee next to my lunch
+    - i love coca cola
+    - i love coke
+    - i love to drink beer and sodas
+    - i like coffees, like cappuccino and latte 
+    - i like to drink those beers that come mixed with fruits, like lemon beer or grapefruit beer
+    - something with alcohol, definitely
+    - i would start by eating less sweets
+    - i would avoid buying sweets and keeping them in the house
+    - a coffee-free sugar!
+    - mostly chocolate, tea, sweets
+    - i often buy milka and lindt
+    - i absolutely love hot chocolate
+    - a coffee or a chocolate bar
+    - i stop buy and get small cakes
+    - that if i eat more, i will gain weight
+    - that i am already fat enough, i do not need more
+    - that i should avoid it, because i have already eaten yesterday
+    - i don't think they care too much
+    - that i should probably slow down with it
+    - that i should lose weight, therefore to cut down sugar    
+    - i can think of wrinkles
+    - i can not think of too much
+    - i certainly think of sweets and especially chocolate
+    - i think of a white or brown powder
+    - i think of my grandma who used to bake
+    - i think of the bakery at the corner
+    - i think of jam on butter
+    - i once failed an exam, and i studied so hard i got max grade
+    - i failed my driving exam twice, bu i got it the third time
+    - i am not sure if i will change much
+    - i will probably go watch tv
+    - elaboration
+    - i picked this number because it is important for me
+    - i choose this number because i does not really matter for me
+    - i think to drink sometimes coke, it is fine, but definitely not everyday
+    - i could stop buying starbucks every morning
+    - its good for your heart
+    - it gives you energy for the moment
+    - my granny uses it for baking
+    - it makes you tired and fat
+    - it can give you heart problems
+    - i think it affects your skin maybe
+    - i dont know, maybe skin and stomach problems
+    - i dont think i consume that much sugar to worry
+    - i dont think much will be different, but maybe a bit healthier
+    - i guess that my older self would appreciate it
+    - for when i get old
+    - idk when i watch netflix or when im bored
+    - nothing
+    - soda and water
+    - because it is important to do something about it, but i feel like im not there yet
+    - i am motivated enough to start doing something
+    - i feel like i should do something so that my older self will thank me
+    - i dont know what my next step could be
+    - that i eat too much sugar
+    - that i should cut some sugar
+    - that sugar is not too healthy for my body, but i will anyways keep still eating it
+    - yea, you missed asking if im an active person or not
+    - it gives me serotonin
+    - check in the kitchen or go buy ar the nearest shhop
+    - maybe not buy sweets anymore or eat at home more so idont buy dessert
+    - well i think it's not good to have sweets around
+    - milka, ice cream, idk, coffee...maybe tea..
+    - that im too fat andi should stop
+    - i dont think they care
+    - a hot chocolate
+    - beer
+    - carries in my teeth
+    - stop buying sweets
+    - i really wanted to lose some weight and i slowly did it
+    - because it is important but not eat too much sugar, but i dont really care at the same time
+    - i feel ok
+    - when i met my partner, i ended up changing countries for him
+    - when i wanted to be the first from my family to own a car
+    - when i first started practicing a sport
+    - knowing why it aint good for the health
+    - hmmmm...coffee, as i mentioned before and sweet drinks with aclcohol sometimes
+    - sodasss
+    - i dont think they care too much
+    - that i should not but i anyways go eat something sweet lol
+    - chocolate, candies, cakes and soda
+    - i would either buy myself something or just check in the house
+    - well i think i need some knowledge boost of why is it bad for me besides of what youve told me today
+    - i would coerce myself to read about why it is bad for my life
+    - i can eat it when i feel like it
+    - coke zero from the fridge
+    - weight
+    - i didnt really try much before, maybe just eat less sweets in general
+    - when i am stressed
+    - i have no idea
+    - i do not really care
+    - idk
+    - i dont know
+    - i really have no idea
+    - i really dont know
+    - zero ideas
+    - That it would be a good idea to only drink sodas a few times in a year
+    - I could maybe stop baking so many sweets or cookies
+    - It would be good to stop eating sugar because it ebenefits your health
+    - It is good to not eat too much sugar because it benefits your health.
+    - A good thing about sugar is that it can make you happy!
+    - Another good thing about sugar is that it can be used for baking sweet things like my granny does sometimes
+    - Well a good thing about sugar is that it can sweeten your black tea
+    - A bad thing about eating sugar is that it makes you gain weight
+    - Another bad things about sugar is that it can make you have sleeping problems because it keeps you awake
+    - Another negative thing about sugar is certainly that it affects your skin
+    - Well, I guess that eating sugar could affect my future health, when I am old.
+    - I have the feeling I would be feeling tired more than usually until my body adapts to not eating sugar.
+    - It is important to manage my diet so that I do not gain weight.
+    - I think it is important to improve sugar intake, because it is not healthy for you body.
+    - I am mostl likely to consume sugar in weekends, when I watch some movies and then I get chocolate
+    - Last week I did the exactly same thing, sadly.
+    - I have not tried to do much to manage my sugar consumption.
+    - I will definitely lose weight!
+    - I have some beer and wine when I come back  home from work.
+    - I like about sugar that it makes stuff sweet
+    - I would maybe stop bringing sweets with me in my lunchbox everyday
+    - Well If I don't bring sweets with my to my job, then it means I eat less sugar in general.
+    - I would maybe order a caked when feeling like somthing sweet
+    - When I feel like eating something sweet I go for dunkin's donuts
+    - That I should stop eating so much sugar because my teeth are hurting after.
+    - I do not believe that my friends are interested that much.
+    - When I have sweet cravingsd I think of sugar
+    - I like to drink coffee and sodas.
+    - When it comes to sugar I think of going out to a cafeteria.
+    - A good first step in eating less sugar would be not buying stuff that contains sugar.
+    - Well, if you don't buy sweets, there will be no sweets
+    - I once wanted badly a specific pair of shoes, I ended up saving monthly a little and I finally got them. THey are designer shoes.
+    - I choose a 5 because yes, it is important to not eat that much sugar, but we only have one life
+    - I feel like I am definitely eating too much sugar and I should probably do something about it
+    - i dont care
+    - dont care too much
+    - not important at all
+    - I believe that is just too much sugar for a few sips of coke.
+    - maybe stop buying chocolate
+    - I would then probably be much healthier
+    - A  good thing about sugar is that it can give you a lot of energy when tired.
+    - I think another good thing about sugar is that it makes your coffee or tea sweet.
+    - Hmmm...maybe a good thing about sugar is that it can make you happy! Like chocolate for females.
+    - Sugar is bad because it makes you gain weight.
+    - Sugar is also bad because it gives you wrinkles when you are old.
+    - A last bad thing about sugar is that it attacks your dental health
+    - That it might affect me in the future
+    - Well, not so much, but maybe it will help with feeling less exhausted.
+    - So that my body does not hurt everywhere in the future
+    - It is important for my health
+    - I am most likely to consume sugar when I am stressed.
+    - Well, for example I get stressed when I have to study for an exam, therefore I often feel like something sweet.
+    - I haven\t tried to make anything before to make a change. I had an attempt to drink less coffee, but I did not last for too long.
+    - I will lose weight
+    - i want to learn
+    - i want to go study
+    - i want to travel
+    - i once invited someone out, but got rejected
+    - i wanted to go for cinema alone, but i was ashamed
+    - i am scared of darkness
+    - i wanted a new pair of shoes but they were expensive
+    - i am afraid to be alone
+    - i got in my dream university
+    - my biggest dream is to own a bike
+    - i really want to come a scientist, so i have to work hard
+    - i want my own family, so i work ward
+    - i wanted to change my job and finally had the courage to tell my boss
+    - i am afraid to speak in public, but i managed
+    - i am scared of the dentist, but i did it
+    - i am scared of doctors, but finally went to him
+    - i wanted to buy my dream car, but it is too expansive so i saved up
+    - i wanted to throw a big surprise party for my sister, and i mananged
+    - i absolutely hate phone calls, but everytime i have one i somehow manage it
+    - I drink some coffee, some coke, some juice and sometimes Fanta or Sprite.
+    - I like that it makes my coffee sweet and that granny can bake me stuff
+    - By maybe readin on the internet about it, to learn more stuff on how to replace sugar things
+    - Well, I feel like there might be other options, better ones, and I would like to improve myself, so the Internet might help
+    - I would go grab a chocolate bar or eat some gummy bears
+    - Lindit chocolate or Frey or sometimes Milka or [Poiana](first_name)
+    - That I should stop because it is not good for my healt and that I had enough
+    - Not really muc probably, as I don't talk to them about this
+    - A coffee with hazelnuts taste!
+    - Coca cola sometimes
+    - Sugar makes me think of sweetness
+    - Maybe having a balanced diet and clear help might be a good step in eating less sugar
+    - Well if a person like me who is stressed will feel better in general, they might not need so much sugar
+    - I wanted to move to a foreing country during the pandemic, and look at me, I did it!
+    - Because even though I do not really eat that much sugar, I whouls definitely be careful.
+    - I want to get myself straight and improve my eating habits.
+    - Yes, well you missed ona few points but you sure portrayed what I like, sugar wise
+    - I am very lucky that I do not drink coke, because that is a lot of sugar. I prefer water
+    - I could maybe replace the sugar i add in my coffee with something else like steva
+    - Not consuming sugar is definitely good for my body.
+    - A good thing about eating sugar is that it is used in baking cakes
+    - Another good thing about sugar is that it can turn bitter things into sugar
+    - Another positive thing about sugar is that it can give you some eneergy when you need it.
+    - A bad thing is that too much sugar can make you feel sick.
+    - Another bad thing about sugar is that is messes up your face, because it gives you wrinkles and acne.
+    - Another negative thing about sugar is that is can give you diabetes.
+    - That if I continue eating sugar as I do i might have carries and have to pay my dentist a few visists.
+    - Eating less sugar might make me feel generally better and maybe lose some weight
+    - I do not believe my life will be too affected if I eat sugar as I do.
+    - I picked a one because this is not really concerning me, I mean my sugar consumption
+    - I like to eat something sweet, like a cookie, next to my coffee.
+    - When I go out in the city, I love it when they serve a cookie with the coffee.
+    - I have not tried anything.
+    - i wanted to learn how to skateboard, i finally did it
+    - I might loose weight!
+    - i want to go to sleep, because im tired
+    - I drink cold water and sometimes when I am bored, I go for some tea or some beer.
+    - I like about sugar that it can make stuff sweet when they are not
+    - In order to improve myself I would maybe see what I can do to be better by reading on the Internet why sugar is bad
+    - Maybe if I see ways to for example replace sweets stuff maybe I can get better
+    - I might check the fridge for something sweet when I feel like it
+    - I like chocolate with mousse cream, ice cream, gummy bears and sometimes strawberry cake
+    - When I feel like something sweet but I know I should not, I should probably just drink some water.
+    - They do tell me I should slow down an eat an apple, but only when they see it.
+    - I think of getting a Coca Cola, that's definitely enough sugar in there
+    - As I said, I like Coca Cola, but only when I feel like something verryyy sweet.
+    - i am afraid of heights, so i went on the rooftop
+    - i wanted to try a new dish of food
+    - i tried again to eat fish
+    - i gained weight very fast from drinking soda
+    - sugar gives me nergy for the rest of the day
+    - i eat sugar in the morning
+    - i eat sugar at night
+    - i should avoid drinks
+    - i am lucky i dont drink coke
+    - the world would be better without sodas and sugar
+    - i benefits my health to consume less sugar
+    - not much would be different for me 
+    - i do not really know, but probably it does me good
+    - i might have to pay the dentist a visit
+    - i have terribly stomach pain
+    - i feel very upset
+    - i am tired because of sugar
+    - i tried before to quit chocolate, but yeah
+    - i stopped purchasing sweets
+    - i dont buy little cakes
+    - i would tell myself not to
+    - i would try to not let myself eat that
+    - that i should calm down
+    - that i eat too much
+    - that i had enough
+    - that it never seems to be enough for me
+    - i eat granny's cake
+    - i often bake sweets
+    - i bake too often, i should stop
+    - i think of my belly
+    - i think of fitting again in my jeans
+    - i think that my clothes dont fit me
+    - i need to lose weight
+    - my friends dont care
+    - my friends thing i eat like a normal person, its me who has an issue
+    - i want to go sky diving once
+    - i need a cat or a dog
+    - i love animals, man
+    - i convinced my granny to visit a foreign country with me
+    - i want to open a small business
+    - i am so excited to own my own library
+    - i want to be a writer
+    - i want to be a painter
+    - i am unhappy
+    - i am happy
+    - i am streesed
+    - i am calm
+    - i am relaxed
+    - i want to go sleep
+    - i need to learn
+    - i am convinced i get do better than this
+    - i will search on the internet more
+    - i will inform myself even more
+    - i will be all wrinkly when old
+    - i eat sugar in the evening
+    - i eat sugar during lunch
+    - i eat sugar in the morning
+    - i eat sugar in the afternoon
+    - i eat sugar at breakfast
+    - i eat sugar at dinner
+    - i eat sugar as a snack
+    - i tried asian food for the first time
+    - i barely eat sweets lately
+    - i often lack energy, so i turn to sugar. a coffee to be more exact
+    - sugar gives me too much energy, makes me dizzy even
+    - it improves my mood when i feel down
+    - i was afraid to let my neighbor know their dog's barking at night sometimes wakes me up
+    - Sugar makes me think of sweet things, like my boyfriend!
+    - A good step in eating less sugar would b not buying sweet things.
+    - If theres nothing in the pantry waiting to be eaten, then theres nothing to be eaten.
+    - I once wanted to get a very good grade in geography and biology and I did it. Of couse, thanks to me studying a lot
+    - I choose a 4 because I do feel a little alarmed now about sugar in general, But im not sure I want to change something
+    - I feel good, thank you
+    - cutting down sugar seems the way to go
+    - i want to also improve my physical activity
+    - along quitting sugar, i want to go to the gym
+    - exercising is also important
