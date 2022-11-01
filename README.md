@@ -1,6 +1,7 @@
 # PandiBot
 
 Technology: Rasa, Python
+
 Support technology: ngrok (https://ngrok.com/) - if paired with FB only
 
 - Already trained on 500 epochs model available in the models folder.
